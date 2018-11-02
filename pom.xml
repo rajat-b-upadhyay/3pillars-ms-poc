@@ -36,6 +36,7 @@
 	
 	<modules>
 		<module>mspoc-sheduler</module>
+		<module>mspoc-discovery</module>
 		
 	</modules>
 </project>
