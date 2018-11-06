@@ -37,6 +37,8 @@
 	<modules>
 		<module>mspoc-sheduler</module>
 		<module>mspoc-discovery</module>
+		<module>mspoc-gateway</module>
+		<module>mspoc-sqlcrud</module>
 		
 	</modules>
 </project>

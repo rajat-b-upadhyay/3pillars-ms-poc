@@ -1,0 +1,20 @@
+[CodePro v6.1 report, generated Wed Oct 31 13:25:08 IST 2018]
+-------------------------------------------------------------------------------
+OVERALL COVERAGE SUMMARY:
+
+[class, %]	[method, %]	[block, %]	[line, %]	[name]
+0%   (0/1)!	0%   (0/2)!	0%   (0/8)!	0%   (0/3)!	all classes
+
+OVERALL STATS SUMMARY:
+
+total packages:	1
+total classes:	1
+total methods:	2
+total executable files:	1
+total executable lines:	3
+
+COVERAGE BREAKDOWN BY PACKAGE:
+
+[class, %]	[method, %]	[block, %]	[line, %]	[name]
+0%   (0/1)!	0%   (0/2)!	0%   (0/8)!	0%   (0/3)!	com.tpg.microservice
+-------------------------------------------------------------------------------
