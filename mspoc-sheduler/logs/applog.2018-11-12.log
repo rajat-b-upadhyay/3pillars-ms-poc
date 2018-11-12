@@ -1,0 +1,525 @@
+12:22:19.281 [main] INFO  com.tpg.mspoc.Application - The following profiles are active: dev 
+12:22:20.204 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+12:22:20.205 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12 
+12:22:20.212 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Softwares\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Users\sajid.ali\AppData\Local\Microsoft\WindowsApps;;C:\Softwares\eclipse\eclipse;;.] 
+12:22:20.348 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+12:22:21.162 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+12:22:21.425 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson 
+12:22:21.425 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson 
+12:22:21.530 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml 
+12:22:21.531 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml 
+12:22:21.679 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:22:21.785 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+12:22:21.786 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+12:22:21.786 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+12:22:21.786 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+12:22:21.786 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+12:22:21.786 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+12:22:21.786 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+12:22:23.860 [main] ERROR c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error 
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.get(WebResource.java:509)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplicationsInternal(AbstractJerseyEurekaHttpClient.java:194)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.getApplications(AbstractJerseyEurekaHttpClient.java:165)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1051)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:965)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:414)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:269)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:63)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:290)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$3a75631e.CGLIB$eurekaClient$2(<generated>)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$3a75631e$$FastClassBySpringCGLIB$$a89477ff.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$3a75631e.eurekaClient(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:605)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:356)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:184)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:353)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:193)
+	at com.sun.proxy.$Proxy75.getEurekaClientConfig(Unknown Source)
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient.getOrder(EurekaDiscoveryClient.java:139)
+	at org.springframework.core.OrderComparator.findOrder(OrderComparator.java:141)
+	at org.springframework.core.annotation.AnnotationAwareOrderComparator.findOrder(AnnotationAwareOrderComparator.java:65)
+	at org.springframework.core.OrderComparator.getOrder(OrderComparator.java:124)
+	at org.springframework.core.OrderComparator.getOrder(OrderComparator.java:112)
+	at org.springframework.core.OrderComparator.doCompare(OrderComparator.java:82)
+	at org.springframework.core.OrderComparator.lambda$withSourceProvider$0(OrderComparator.java:63)
+	at java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.util.TimSort.sort(Unknown Source)
+	at java.util.Arrays.sort(Unknown Source)
+	at java.util.ArrayList.sort(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1323)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:855)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:758)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.tpg.mspoc.Application.main(Application.java:22)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 86 common frames omitted
+12:22:23.864 [main] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.ConnectException: Connection refused: connect 
+12:22:23.868 [main] ERROR c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8080 - was unable to refresh its cache! status = Cannot execute request on any known server 
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$6.execute(EurekaHttpClientDecorator.java:137)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.getApplications(EurekaHttpClientDecorator.java:134)
+	at com.netflix.discovery.DiscoveryClient.getAndStoreFullRegistry(DiscoveryClient.java:1051)
+	at com.netflix.discovery.DiscoveryClient.fetchRegistry(DiscoveryClient.java:965)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:414)
+	at com.netflix.discovery.DiscoveryClient.<init>(DiscoveryClient.java:269)
+	at org.springframework.cloud.netflix.eureka.CloudEurekaClient.<init>(CloudEurekaClient.java:63)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration.eurekaClient(EurekaClientAutoConfiguration.java:290)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$3a75631e.CGLIB$eurekaClient$2(<generated>)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$3a75631e$$FastClassBySpringCGLIB$$a89477ff.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.springframework.cloud.netflix.eureka.EurekaClientAutoConfiguration$RefreshableEurekaClientConfiguration$$EnhancerBySpringCGLIB$$3a75631e.eurekaClient(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:620)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:605)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$1(AbstractBeanFactory.java:356)
+	at org.springframework.cloud.context.scope.GenericScope$BeanLifecycleWrapper.getBean(GenericScope.java:390)
+	at org.springframework.cloud.context.scope.GenericScope.get(GenericScope.java:184)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:353)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.aop.target.SimpleBeanTargetSource.getTarget(SimpleBeanTargetSource.java:35)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:193)
+	at com.sun.proxy.$Proxy75.getEurekaClientConfig(Unknown Source)
+	at org.springframework.cloud.netflix.eureka.EurekaDiscoveryClient.getOrder(EurekaDiscoveryClient.java:139)
+	at org.springframework.core.OrderComparator.findOrder(OrderComparator.java:141)
+	at org.springframework.core.annotation.AnnotationAwareOrderComparator.findOrder(AnnotationAwareOrderComparator.java:65)
+	at org.springframework.core.OrderComparator.getOrder(OrderComparator.java:124)
+	at org.springframework.core.OrderComparator.getOrder(OrderComparator.java:112)
+	at org.springframework.core.OrderComparator.doCompare(OrderComparator.java:82)
+	at org.springframework.core.OrderComparator.lambda$withSourceProvider$0(OrderComparator.java:63)
+	at java.util.TimSort.countRunAndMakeAscending(Unknown Source)
+	at java.util.TimSort.sort(Unknown Source)
+	at java.util.Arrays.sort(Unknown Source)
+	at java.util.ArrayList.sort(Unknown Source)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1323)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1166)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:855)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:758)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:508)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1288)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:538)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:498)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:846)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:863)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:546)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.tpg.mspoc.Application.main(Application.java:22)
+12:22:23.870 [main] WARN  c.netflix.discovery.DiscoveryClient - Using default backup registry implementation which does not do anything. 
+12:22:23.872 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+12:22:23.875 [main] INFO  c.n.d.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+12:22:23.879 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1542005543878 with initial instances count: 0 
+12:22:23.951 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542005543951, current=UP, previous=STARTING] 
+12:22:23.953 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8080: registering service... 
+12:22:23.960 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:22:23.960 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:22:23.964 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:22:23 
+12:22:23.964 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:22:23.991 [main] INFO  com.tpg.mspoc.Application - Started Application in 5.714 seconds (JVM running for 6.259) 
+12:22:25.969 [DiscoveryClient-InstanceInfoReplicator-0] ERROR c.n.d.s.t.d.RedirectingEurekaHttpClient - Request execution error 
+com.sun.jersey.api.client.ClientHandlerException: java.net.ConnectException: Connection refused: connect
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:187)
+	at com.sun.jersey.api.client.filter.GZIPContentEncodingFilter.handle(GZIPContentEncodingFilter.java:123)
+	at com.netflix.discovery.EurekaIdentityHeaderFilter.handle(EurekaIdentityHeaderFilter.java:27)
+	at com.sun.jersey.api.client.Client.handle(Client.java:652)
+	at com.sun.jersey.api.client.WebResource.handle(WebResource.java:682)
+	at com.sun.jersey.api.client.WebResource.access$200(WebResource.java:74)
+	at com.sun.jersey.api.client.WebResource$Builder.post(WebResource.java:570)
+	at com.netflix.discovery.shared.transport.jersey.AbstractJerseyEurekaHttpClient.register(AbstractJerseyEurekaHttpClient.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.MetricsCollectingEurekaHttpClient.execute(MetricsCollectingEurekaHttpClient.java:73)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.executeOnNewServer(RedirectingEurekaHttpClient.java:118)
+	at com.netflix.discovery.shared.transport.decorator.RedirectingEurekaHttpClient.execute(RedirectingEurekaHttpClient.java:79)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:120)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.scheme.PlainSocketFactory.connectSocket(PlainSocketFactory.java:121)
+	at org.apache.http.impl.conn.DefaultClientConnectionOperator.openConnection(DefaultClientConnectionOperator.java:180)
+	at org.apache.http.impl.conn.AbstractPoolEntry.open(AbstractPoolEntry.java:144)
+	at org.apache.http.impl.conn.AbstractPooledConnAdapter.open(AbstractPooledConnAdapter.java:134)
+	at org.apache.http.impl.client.DefaultRequestDirector.tryConnect(DefaultRequestDirector.java:610)
+	at org.apache.http.impl.client.DefaultRequestDirector.execute(DefaultRequestDirector.java:445)
+	at org.apache.http.impl.client.AbstractHttpClient.doExecute(AbstractHttpClient.java:835)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:118)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:56)
+	at com.sun.jersey.client.apache4.ApacheHttpClient4Handler.handle(ApacheHttpClient4Handler.java:173)
+	... 30 common frames omitted
+12:22:25.970 [DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.s.t.d.RetryableEurekaHttpClient - Request execution failed with message: java.net.ConnectException: Connection refused: connect 
+12:22:25.971 [DiscoveryClient-InstanceInfoReplicator-0] WARN  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8080 - registration failed Cannot execute request on any known server 
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+12:22:25.971 [DiscoveryClient-InstanceInfoReplicator-0] WARN  c.n.d.InstanceInfoReplicator - There was a problem with the instance info replicator 
+com.netflix.discovery.shared.transport.TransportException: Cannot execute request on any known server
+	at com.netflix.discovery.shared.transport.decorator.RetryableEurekaHttpClient.execute(RetryableEurekaHttpClient.java:112)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator$1.execute(EurekaHttpClientDecorator.java:59)
+	at com.netflix.discovery.shared.transport.decorator.SessionedEurekaHttpClient.execute(SessionedEurekaHttpClient.java:77)
+	at com.netflix.discovery.shared.transport.decorator.EurekaHttpClientDecorator.register(EurekaHttpClientDecorator.java:56)
+	at com.netflix.discovery.DiscoveryClient.register(DiscoveryClient.java:829)
+	at com.netflix.discovery.InstanceInfoReplicator.run(InstanceInfoReplicator.java:121)
+	at com.netflix.discovery.InstanceInfoReplicator$1.run(InstanceInfoReplicator.java:101)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(Unknown Source)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+12:24:03.937 [main] INFO  com.tpg.mspoc.Application - The following profiles are active: dev 
+12:24:04.958 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+12:24:04.959 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12 
+12:24:04.972 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Softwares\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Users\sajid.ali\AppData\Local\Microsoft\WindowsApps;;C:\Softwares\eclipse\eclipse;;.] 
+12:24:05.119 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+12:24:05.956 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+12:24:06.214 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson 
+12:24:06.215 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson 
+12:24:06.319 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml 
+12:24:06.319 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml 
+12:24:06.476 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:24:06.579 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+12:24:06.579 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+12:24:06.579 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+12:24:06.579 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+12:24:06.579 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+12:24:06.579 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+12:24:06.579 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+12:24:06.746 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+12:24:06.747 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+12:24:06.749 [main] INFO  c.n.d.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+12:24:06.753 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1542005646752 with initial instances count: 2 
+12:24:06.809 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542005646809, current=UP, previous=STARTING] 
+12:24:06.810 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8080: registering service... 
+12:24:06.818 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:24:06.822 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:24:06.822 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:24:06 
+12:24:06.822 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:24:06.846 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8080 - registration status: 204 
+12:24:06.848 [main] INFO  com.tpg.mspoc.Application - Started Application in 3.951 seconds (JVM running for 4.447) 
+12:26:06.514 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12:29:06.586 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:29:06.822 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:29:06.822 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:29:06.822 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:29:06 
+12:29:06.822 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:32:41.478 [main] INFO  com.tpg.mspoc.Application - The following profiles are active: dev 
+12:32:42.458 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+12:32:42.459 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12 
+12:32:42.468 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Softwares\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Users\sajid.ali\AppData\Local\Microsoft\WindowsApps;;C:\Softwares\eclipse\eclipse;;.] 
+12:32:42.600 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+12:32:43.477 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+12:32:43.741 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson 
+12:32:43.741 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson 
+12:32:43.852 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml 
+12:32:43.852 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml 
+12:32:44.009 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:32:44.136 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+12:32:44.136 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+12:32:44.136 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+12:32:44.136 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+12:32:44.136 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+12:32:44.136 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+12:32:44.139 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+12:32:44.351 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+12:32:44.354 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+12:32:44.356 [main] INFO  c.n.d.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+12:32:44.359 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1542006164358 with initial instances count: 3 
+12:32:44.428 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542006164428, current=UP, previous=STARTING] 
+12:32:44.428 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8080: registering service... 
+12:32:44.436 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:32:44.436 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:32:44.436 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:32:44 
+12:32:44.438 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:32:44.461 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8080 - registration status: 204 
+12:32:44.469 [main] INFO  com.tpg.mspoc.Application - Started Application in 3.992 seconds (JVM running for 4.479) 
+12:34:05.685 [main] INFO  com.tpg.mspoc.Application - The following profiles are active: dev 
+12:34:06.673 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+12:34:06.673 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12 
+12:34:06.682 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Softwares\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Users\sajid.ali\AppData\Local\Microsoft\WindowsApps;;C:\Softwares\eclipse\eclipse;;.] 
+12:34:06.823 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+12:34:07.688 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+12:34:07.959 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson 
+12:34:07.959 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson 
+12:34:08.069 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml 
+12:34:08.069 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml 
+12:34:08.238 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:34:08.351 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+12:34:08.351 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+12:34:08.351 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+12:34:08.351 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+12:34:08.351 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+12:34:08.351 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+12:34:08.355 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+12:34:08.532 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+12:34:08.534 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+12:34:08.537 [main] INFO  c.n.d.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+12:34:08.541 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1542006248540 with initial instances count: 4 
+12:34:08.605 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542006248605, current=UP, previous=STARTING] 
+12:34:08.607 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8081: registering service... 
+12:34:08.616 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:34:08.616 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:34:08.620 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:34:08 
+12:34:08.620 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:34:08.627 [main] ERROR o.a.catalina.util.LifecycleBase - Failed to start component [Connector[HTTP/1.1-8081]] 
+org.apache.catalina.LifecycleException: Protocol handler start failed
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:960)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.addConnector(StandardService.java:225)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.addPreviouslyRemovedConnectors(TomcatWebServer.java:259)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.start(TomcatWebServer.java:197)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.startWebServer(ServletWebServerApplicationContext.java:300)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:162)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.tpg.mspoc.Application.main(Application.java:22)
+Caused by: java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.apache.tomcat.util.net.NioEndpoint.initServerSocket(NioEndpoint.java:236)
+	at org.apache.tomcat.util.net.NioEndpoint.bind(NioEndpoint.java:210)
+	at org.apache.tomcat.util.net.AbstractEndpoint.start(AbstractEndpoint.java:1108)
+	at org.apache.coyote.AbstractProtocol.start(AbstractProtocol.java:550)
+	at org.apache.catalina.connector.Connector.startInternal(Connector.java:957)
+	... 14 common frames omitted
+12:34:08.632 [main] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat] 
+12:34:08.647 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8081 - registration status: 204 
+12:34:08.651 [main] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+The Tomcat connector configured to listen on port 8081 failed to start. The port may already be in use or the connector may be misconfigured.
+
+Action:
+
+Verify the connector's configuration, identify and stop any process that's listening on port 8081, or configure this application to listen on another port.
+ 
+12:34:08.652 [main] WARN  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542006248652, current=DOWN, previous=UP] 
+12:34:08.652 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8081: registering service... 
+12:34:08.655 [main] INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ... 
+12:34:08.657 [main] WARN  o.s.c.a.CommonAnnotationBeanPostProcessor - Destroy method on bean with name 'scopedTarget.eurekaClient' threw an exception: org.springframework.beans.factory.BeanCreationNotAllowedException: Error creating bean with name 'eurekaInstanceConfigBean': Singleton bean creation not allowed while singletons of this factory are in destruction (Do not request a bean from a BeanFactory in a destroy method implementation!) 
+12:34:08.659 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8081 - registration status: 204 
+12:34:52.952 [main] INFO  com.tpg.mspoc.Application - The following profiles are active: dev 
+12:34:54.008 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat] 
+12:34:54.009 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/9.0.12 
+12:34:54.018 [main] INFO  o.a.c.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jre1.8.0_191\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:/Program Files/Java/jre1.8.0_191/bin/server;C:/Program Files/Java/jre1.8.0_191/bin;C:/Program Files/Java/jre1.8.0_191/lib/amd64;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\iCLS\;C:\Program Files\Intel\Intel(R) Management Engine Components\iCLS\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Softwares\apache-maven-3.5.4\bin;C:\Program Files\Git\cmd;C:\Users\sajid.ali\AppData\Local\Microsoft\WindowsApps;;C:\Softwares\eclipse\eclipse;;.] 
+12:34:54.162 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext 
+12:34:54.997 [main] INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1 
+12:34:55.262 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON encoding codec LegacyJacksonJson 
+12:34:55.262 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using JSON decoding codec LegacyJacksonJson 
+12:34:55.366 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML encoding codec XStreamXml 
+12:34:55.369 [main] INFO  c.n.d.p.DiscoveryJerseyProvider - Using XML decoding codec XStreamXml 
+12:34:55.516 [main] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:34:55.619 [main] INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false 
+12:34:55.619 [main] INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null 
+12:34:55.619 [main] INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false 
+12:34:55.619 [main] INFO  c.netflix.discovery.DiscoveryClient - Application is null : false 
+12:34:55.619 [main] INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true 
+12:34:55.619 [main] INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true 
+12:34:55.619 [main] INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server 
+12:34:55.782 [main] INFO  c.netflix.discovery.DiscoveryClient - The response status is 200 
+12:34:55.785 [main] INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30 
+12:34:55.786 [main] INFO  c.n.d.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4 
+12:34:55.789 [main] INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1542006295788 with initial instances count: 5 
+12:34:55.844 [main] INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1542006295844, current=UP, previous=STARTING] 
+12:34:55.847 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8090: registering service... 
+12:34:55.855 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:34:55.856 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:34:55.857 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:34:55 
+12:34:55.857 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:34:55.877 [DiscoveryClient-InstanceInfoReplicator-0] INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_SCHEDULER-SERVICE/NDI-LAP-821.3pillar.corp:scheduler-service:8090 - registration status: 204 
+12:34:55.882 [main] INFO  com.tpg.mspoc.Application - Started Application in 3.944 seconds (JVM running for 4.42) 
+12:35:31.180 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12:37:44.136 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:37:44.436 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:37:44.436 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:37:44.436 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:37:44 
+12:37:44.436 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:39:55.623 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:39:55.859 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:39:55.859 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:39:55.859 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:39:55 
+12:39:55.891 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:42:44.139 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:42:44.433 [my-scheduled-task-pool-2] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-2 
+12:42:44.433 [my-scheduled-task-pool-2] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:42:44.433 [my-scheduled-task-pool-2] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:42:44 
+12:42:44.433 [my-scheduled-task-pool-2] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:44:55.627 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:44:55.858 [my-scheduled-task-pool-2] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-2 
+12:44:55.858 [my-scheduled-task-pool-2] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:44:55.858 [my-scheduled-task-pool-2] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:44:55 
+12:44:55.858 [my-scheduled-task-pool-2] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:47:44.144 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:47:44.432 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:47:44.432 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:47:44.432 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:47:44 
+12:47:44.432 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:49:46.065 [http-nio-8090-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet' 
+12:49:55.631 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:49:55.858 [my-scheduled-task-pool-1] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-1 
+12:49:55.858 [my-scheduled-task-pool-1] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:49:55.858 [my-scheduled-task-pool-1] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:49:55 
+12:49:55.858 [my-scheduled-task-pool-1] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:52:44.150 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:52:44.440 [my-scheduled-task-pool-3] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-3 
+12:52:44.440 [my-scheduled-task-pool-3] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:52:44.440 [my-scheduled-task-pool-3] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:52:44 
+12:52:44.440 [my-scheduled-task-pool-3] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:54:55.634 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:54:55.859 [my-scheduled-task-pool-3] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-3 
+12:54:55.860 [my-scheduled-task-pool-3] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:54:55.860 [my-scheduled-task-pool-3] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:54:55 
+12:54:55.860 [my-scheduled-task-pool-3] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:57:44.153 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:57:44.436 [my-scheduled-task-pool-2] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-2 
+12:57:44.436 [my-scheduled-task-pool-2] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:57:44.436 [my-scheduled-task-pool-2] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:57:44 
+12:57:44.436 [my-scheduled-task-pool-2] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
+12:59:55.637 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration 
+12:59:55.859 [my-scheduled-task-pool-2] INFO  ScheduledTasks - Current Thread : my-scheduled-task-pool-2 
+12:59:55.859 [my-scheduled-task-pool-2] INFO  ScheduledTasks - APPLICATION PROFILE: dev 
+12:59:55.859 [my-scheduled-task-pool-2] INFO  ScheduledTasks - >>>>>>>> The executeTask STARTED <<<<<<<<<<<<< at 12:59:55 
+12:59:55.859 [my-scheduled-task-pool-2] INFO  ScheduledTasks - !!!!!!!!! The executeTask FINISHED !!!!!!!!!! 
