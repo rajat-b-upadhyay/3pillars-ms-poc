@@ -37,6 +37,7 @@
 	<modules>
 		<module>mspoc-sheduler</module>
 		<module>mspoc-discovery</module>
-		
+		<module>mspoc-configserver</module>
+		<module>mspoc-configclientapp</module>
 	</modules>
 </project>
