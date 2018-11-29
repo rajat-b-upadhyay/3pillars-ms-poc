@@ -1,0 +1,55 @@
+version: "2.2"
+
+services:
+   discovery-service:
+    build: ./mspoc-discovery 
+    ports:
+      - "8088:8088"
+    networks:
+      - private-cloud-network
+      
+   gateway-service:
+    build: ./mspoc-gateway 
+    ports:
+      - "8082:8082"
+    depends_on:
+      - discovery-service
+      - customer-service
+      - sheduler-service
+    links:
+      - discovery-service
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery-service:8088/eureka/
+    networks:
+      - private-cloud-network
+      
+   customer-service:
+    build: ./mspoc-sqlcrud
+    ports:
+      - "8084:8084"
+    depends_on:
+      - discovery-service
+    links:
+      - discovery-service
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery-service:8088/eureka/
+    networks:
+      - private-cloud-network
+      
+   sheduler-service:
+    build: ./mspoc-sheduler
+    ports:
+      - "8080:8080"
+    depends_on:
+      - discovery-service  
+    links:
+      - discovery-service  
+    environment:
+      eureka.client.serviceUrl.defaultZone: http://discovery-service:8088/eureka/ 
+    networks:
+      - private-cloud-network
+      
+   
+networks:
+  private-cloud-network:
+     driver: bridge
